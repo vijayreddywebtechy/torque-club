@@ -7,6 +7,7 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import { FiSunrise } from "react-icons/fi";
 import Menus from './Menus';
 import { NavigationContext } from '@/contentApi/navigationProvider';
+import getIcon from '@/utils/getIcon';
 
 const NavigationManu = () => {
     const { navigationOpen, setNavigationOpen } = useContext(NavigationContext)
@@ -22,7 +23,8 @@ const NavigationManu = () => {
                         {/* <!-- ========   change your logo hear   ============ --> */}
                         {/* <Image width={140} height={30} src="/images/logo-full.png" alt="logo" className="logo logo-lg" />
                         <Image width={140} height={30} src="/images/logo-abbr.png" alt="logo" className="logo logo-sm" /> */}
-                        <h3>Torque Club</h3>
+                        <h3 className='logo-lg'>Torque Club</h3>
+                        <h3 className='logo-sm'>TC</h3>
                     </Link>
                 </div>
 
@@ -35,27 +37,27 @@ const NavigationManu = () => {
                             <Menus />
                         </ul>
                         <div style={{ height: "18px" }}></div>
-                                        {/* Bottom Navigation Links */}
-                <div className="navbar-footer border-top">
-                    <ul className="nxl-navbar">
-                        <li className="nxl-item">
-                            <Link href="/settings/ganeral" className="nxl-link">
-                                <span className="nxl-micon">
-                                    <i className="feather-settings"></i>
-                                </span>
-                                <span className="nxl-mtext">Settings</span>
-                            </Link>
-                        </li>
-                        <li className="nxl-item">
-                            <Link href="/authentication/login" className="nxl-link">
-                                <span className="nxl-micon">
-                                    <i className="feather-log-out"></i>
-                                </span>
-                                <span className="nxl-mtext">Logout</span>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
+                        {/* Bottom Navigation Links */}
+                        <div className="border-top pt-3 mt-3">
+                            <ul className="nxl-navbar">
+                                <li className={`nxl-item ${pathName.startsWith('/settings') ? 'active' : ''}`}>
+                                    <Link href="/settings/ganeral" className="nxl-link">
+                                        <span className="nxl-micon">
+                                            {getIcon('feather-settings')}
+                                        </span>
+                                        <span className="nxl-mtext" style={{ paddingLeft: "2.5px" }}>Settings</span>
+                                    </Link>
+                                </li>
+                                <li className="nxl-item">
+                                    <Link href="/authentication/login" className="nxl-link">
+                                        <span className="nxl-micon">
+                                            {getIcon('feather-log-out')}
+                                        </span>
+                                        <span className="nxl-mtext" style={{ paddingLeft: "2.5px" }}>Logout</span>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </PerfectScrollbar>
                 </div>
                 

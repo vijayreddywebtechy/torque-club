@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import CardHeader from '@/components/shared/CardHeader'
 import useCardTitleActions from '@/hooks/useCardTitleActions'
 import CardLoader from '@/components/shared/CardLoader'
-import { FiLink2 } from 'react-icons/fi'
+import { FiDollarSign, FiLink2 } from 'react-icons/fi'
 import { topCountryClickChartOptions } from '@/utils/chartsLogic/topCountryClickChartOption'
 import dynamic from 'next/dynamic'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
@@ -15,7 +15,7 @@ const countryStatsData = [
     { country: 'Rentals', clicks: 'R14,692', flag: "" },
 ];
 
-const TopCountryChart = () => {
+const TopCountryChart = ({ title = "Revenue Breakdown" }) => {
     const chartOptions = topCountryClickChartOptions()
     const { refreshKey, isRemoved, isExpanded, handleRefresh, handleExpand, handleDelete } = useCardTitleActions();
 
@@ -27,7 +27,25 @@ const TopCountryChart = () => {
             <div className={`card stretch stretch-full leads-overview ${isExpanded ? "card-expand" : ""} ${refreshKey ? "card-loading" : ""}`}>
                 {/* <CardHeader title={"Top Country"} refresh={handleRefresh} remove={handleDelete} expanded={handleExpand} /> */}
                 <div className="card-header">
-                    <h5 className="card-title">Revenue Breakdown</h5>
+                    <div className="d-flex align-items-center">
+                        <div className="avatar-text avatar-sm me-2">
+                            <FiDollarSign />
+                        </div>
+                        <h5 className="card-title mb-0">{title}</h5>
+                    </div>
+                    <div className="card-header-action">
+                        <div className="card-header-btn">
+                            <div data-toggle="tooltip" data-title="Delete" onClick={handleDelete}>
+                                <span className="avatar-text avatar-xs bg-danger" data-bs-toggle="remove"></span>
+                            </div>
+                            <div data-toggle="tooltip" data-title="Refresh" onClick={handleRefresh}>
+                                <span className="avatar-text avatar-xs bg-warning" data-bs-toggle="refresh"></span>
+                            </div>
+                            <div data-toggle="tooltip" data-title="Maximize/Minimize" onClick={handleExpand}>
+                                <span className="avatar-text avatar-xs bg-success" data-bs-toggle="expand"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="card-body">
                     <div className="d-flex align-items-center justify-content-center" >

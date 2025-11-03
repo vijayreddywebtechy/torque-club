@@ -8,9 +8,7 @@ import RegisteredAddresses from '@/components/company/RegisteredAddresses'
 const CompanyProfile = () => {
   return (
     <DuplicateLayout>
-      <PageHeader>
-        <PageHeaderDate />
-      </PageHeader>
+      <PageHeader/>
 
       <div className='main-content'>
         <div className='row'>

@@ -25,11 +25,6 @@ const PccOrdersPage = () => {
             </div>
           </div>
         </div>
-        <div className="page-header-right ms-auto">
-          <div className="d-flex align-items-center gap-2 page-header-right-items-wrapper">
-            <PageHeaderDate />
-          </div>
-        </div>
       </div>
 
       <div className='main-content'>

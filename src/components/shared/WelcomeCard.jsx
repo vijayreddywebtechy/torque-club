@@ -10,18 +10,18 @@ const WelcomeCard = () => {
     return (
         <div className="card mb-4">
             <div className="card-body">
-                <div className="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h3 className="mb-2 d-flex align-items-center">
+                <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div className="mb-3 mb-md-0">
+                        <h3 className="mb-2 d-flex flex-wrap align-items-center">
                             Welcome back, John
-                            <span className="badge bg-success text-white ms-2 fs-11 d-inline-flex align-items-center">
+                            <span className="badge bg-success text-white ms-2 fs-11 d-inline-flex align-items-center mt-1 mt-sm-0">
                                 <span className="badge-dot bg-white me-1"></span>
                                 Online
                             </span>
                         </h3>
                         <p className="text-muted mb-0">Here's your fleet overview for today</p>
                     </div>
-                    <div className="text-end">
+                    <div className="text-md-end">
                         <div className="text-muted fs-12">Today</div>
                         <h5 className="mb-0">{dateString}</h5>
                         <div className="text-muted fs-12">{dayName}</div>

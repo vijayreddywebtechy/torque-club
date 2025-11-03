@@ -5,9 +5,10 @@ import CardHeader from '@/components/shared/CardHeader'
 import { projectStatisticsChartOption } from '@/utils/chartsLogic/projectStatisticsChartOption'
 import CardLoader from '@/components/shared/CardLoader'
 import useCardTitleActions from '@/hooks/useCardTitleActions'
+import { FiBarChart } from 'react-icons/fi'
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
-const ProjectReportChart = () => {
+const ProjectReportChart = ({ title = "Fleet Performance Analytics" }) => {
     const chartOptions = projectStatisticsChartOption()
     const { refreshKey, isRemoved, isExpanded, handleRefresh, handleExpand, handleDelete } = useCardTitleActions();
     if (isRemoved) {
@@ -19,7 +20,12 @@ const ProjectReportChart = () => {
             <div className={`card stretch stretch-full leads-overview ${isExpanded ? "card-expand" : ""} ${refreshKey ? "card-loading" : ""}`}>
                 {/* <CardHeader title={"Fleet Performance Analytics"} refresh={handleRefresh} remove={handleDelete} expanded={handleExpand}/> */}
                 <div className="card-header">
-                    <h5 className="card-title">Fleet Performance Analytics</h5>
+                    <div className="d-flex align-items-center">
+                        <div className="avatar-text avatar-sm me-2">
+                            <FiBarChart />
+                        </div>
+                        <h5 className="card-title mb-0">{title}</h5>
+                    </div>
                     <button className="btn btn-md btn-light-brand">Export Data</button>
                 </div>
                 <div className="card-body custom-card-action">

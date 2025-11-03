@@ -179,6 +179,8 @@ const getIcon = (name) => {
             return <FiZap />
         case "feather-refresh-cw":
             return <FiRefreshCw />
+        case "feather-log-out":
+            return <FiPower />
 
 
 
