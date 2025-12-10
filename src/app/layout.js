@@ -5,7 +5,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import "react-datetime/css/react-datetime.css";
 import NavigationProvider from "@/contentApi/navigationProvider";
 import SettingSideBarProvider from "@/contentApi/settingSideBarProvider";
-import ThemeCustomizer from "@/components/shared/ThemeCustomizer";
+// import ThemeCustomizer from "@/components/shared/ThemeCustomizer";
+import { themeInitScript } from "@/utils/themeInit";
 
 export const metadata = {
   title: "Torque Club | Dashboard",
@@ -15,6 +16,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <SettingSideBarProvider>
           <NavigationProvider>

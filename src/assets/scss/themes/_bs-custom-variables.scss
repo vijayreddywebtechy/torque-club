@@ -15,7 +15,7 @@ $gray-100: #eff0f6;
 $gray-200: #e9ecef;
 $gray-300: #e5e7eb;
 $gray-400: #ced4da;
-$gray-500: #91a1b6;
+$gray-500:  #94a2aa ; //#91a1b6;
 $gray-600: #64748b;
 $gray-700: #495057;
 $gray-800: #343a40;
@@ -29,7 +29,7 @@ $purple: #6f42c1;
 $pink: #e83e8c;
 $red: #ea4d4d;
 $orange: #fd7e14;
-$yellow: #ffa21d;
+$yellow:  #fdba12;
 $green: #17c666;
 $teal: #41b2c4;
 $cyan: #3dc7be;
@@ -48,8 +48,8 @@ $body-color: #4b5563;
 $text-muted: #64748b;
 
 // Colors Map
-$primary: $blue;
-$secondary: $gray-600;
+$primary: $yellow;
+$secondary: $gray-500;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;

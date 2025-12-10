@@ -12,7 +12,7 @@ html {
 				border-right: 1px solid $navigation-border-color;
 				border-bottom: 1px solid lighten($header-brand-color, 5);
 				.logo-lg {
-					filter: invert(1);
+					// filter: invert(1);
 				}
 			}
 			.navbar-content {

@@ -39,34 +39,66 @@ export const selfServiceData = {
     ],
     trackingRequests: [
         {
-            id: "REQ-2025-001",
+            id: 1,
+            requestId: "REQ-2025-001",
             type: "Maintenance",
             title: "Scheduled Maintenance - CAT 320D",
-            status: "In Progress",
-            statusColor: "warning",
-            date: "2025-01-20",
-            priority: "Medium",
-            priorityColor: "warning"
+            machine: "CAT 320D Excavator",
+            status: "in-progress",
+            priority: "medium",
+            createdDate: "2025-01-15",
+            lastUpdated: "2025-01-20",
+            assignedTo: "John Smith",
+            estimatedCompletion: "2025-01-25",
+            progress: 60,
+            latestUpdate: "Hydraulic fluid replacement completed. Engine oil inspection in progress. Next step: filter replacement scheduled for tomorrow morning.",
+            updatedBy: "John Smith",
+            updatedTime: "2 hours ago",
+            attachments: [
+                { name: "maintenance_report.pdf", size: "2.4 MB" },
+                { name: "parts_list.pdf", size: "1.8 MB" }
+            ]
         },
         {
-            id: "REQ-2025-002",
+            id: 2,
+            requestId: "REQ-2025-002",
             type: "Repair",
             title: "Hydraulic System Repair",
-            status: "Pending",
-            statusColor: "info",
-            date: "2025-01-18",
-            priority: "High",
-            priorityColor: "danger"
+            machine: "Komatsu PC200 Excavator",
+            status: "pending",
+            priority: "high",
+            createdDate: "2025-01-18",
+            lastUpdated: "2025-01-18",
+            assignedTo: "Sarah Johnson",
+            estimatedCompletion: "2025-01-28",
+            progress: 10,
+            latestUpdate: "Request received and reviewed. Technician assignment pending. We will contact you shortly with more details and scheduling information.",
+            updatedBy: "System",
+            updatedTime: "1 day ago",
+            attachments: [
+                { name: "repair_request_form.pdf", size: "956 KB" }
+            ]
         },
         {
-            id: "REQ-2025-003",
+            id: 3,
+            requestId: "REQ-2025-003",
             type: "Inspection",
             title: "Safety Compliance Check",
-            status: "Completed",
-            statusColor: "success",
-            date: "2025-01-15",
-            priority: "Low",
-            priorityColor: "secondary"
+            machine: "Volvo A45G Articulated Dump Truck",
+            status: "completed",
+            priority: "low",
+            createdDate: "2025-01-10",
+            lastUpdated: "2025-01-15",
+            assignedTo: "Mike Wilson",
+            estimatedCompletion: "2025-01-15",
+            progress: 100,
+            latestUpdate: "Safety inspection completed successfully. All equipment meets compliance standards. Certificate of compliance issued and filed.",
+            updatedBy: "Mike Wilson",
+            updatedTime: "5 days ago",
+            attachments: [
+                { name: "compliance_certificate.pdf", size: "1.2 MB" },
+                { name: "inspection_checklist.pdf", size: "892 KB" }
+            ]
         }
     ],
     chatMessages: [

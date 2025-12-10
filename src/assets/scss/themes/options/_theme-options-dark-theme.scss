@@ -44,6 +44,72 @@ html {
 			color: $white !important;
 		}
 
+		.nxl-navigation {
+			a:not(.nxl-link):not(:hover):not(:focus):not(:active),
+			.h1,
+			.h2,
+			.h3,
+			.h4,
+			.h5,
+			.h6,
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			input,
+			.btn,
+			.text-dark,
+			.user-name,
+			.form-label,
+			#renderRange,
+			.form-control,
+			.ladda-button,
+			.dropdown-item,
+			.input-group-text,
+			.custom-file,
+			.custom-select,
+			.form-select,
+			.col-form-label,
+			.table tfoot th,
+			.table thead th,
+			.accordion-body,
+			.list-group-item,
+			.custom-control-label,
+			.reportrange-picker-field,
+			.daterangepicker .ranges li,
+			svg {
+				color: #94a2aa !important;
+			}
+
+			.nxl-link {
+				color: #94a2aa !important;
+				
+				&:hover,
+				&:focus,
+				&:active {
+					color: $primary !important;
+					
+					.nxl-micon {
+						i, svg {
+							color: $primary !important;
+						}
+					}
+				}
+			}
+
+			.nxl-item.active > .nxl-link {
+				color: $primary !important;
+				
+				.nxl-micon {
+					i, svg {
+						color: $primary !important;
+					}
+				}
+			}
+		}
+
 		body,
 		.table,
 		.text-muted {
@@ -69,11 +135,18 @@ html {
 		.language_select.active a:before {
 			background-color: $dark-theme-color-dark !important;
 		}
+		
+		.page-header {
+			border-bottom: 1px solid $dark-theme-color-border !important;
+		}
+
+		.nxl-header {
+			background-color: $dark-theme-color-dark !important;
+		}
 
 		.card,
 		.footer,
 		.bg-white,
-		.nxl-header,
 		.swal2-popup,
 		.ladda-button,
 		.dropdown-menu,
@@ -157,6 +230,26 @@ html {
 			&:active,
 			&.active {
 				border-color: $primary !important;
+			}
+		}
+		
+		.form-select {
+			option {
+				background-color: $dark-theme-color-darker !important;
+				color: $white !important;
+				
+				&:hover,
+				&:checked,
+				&:focus {
+					background-color: $dark-theme-color-hover !important;
+				}
+			}
+		}
+		
+		select {
+			option {
+				background-color: $dark-theme-color-darker !important;
+				color: $white !important;
 			}
 		}
 
@@ -1265,11 +1358,34 @@ html {
 			&.table-hover>tbody>tr:hover>*,
 			&.table-striped>tbody>tr:nth-of-type(odd)>* {
 				color: $white !important;
-				--bs-table-accent-bg: #121b2e !important;
+				--bs-table-accent-bg: #000005 !important;
 			}
 
 			&:not(caption)>* {
 				border-color: $dark-theme-color-border !important;
+			}
+			
+			thead {
+				&.bg-light {
+					background-color: $dark-theme-color-hover !important;
+				}
+				
+				th {
+					color: $white !important;
+				}
+			}
+			
+			tbody {
+				td {
+					.fw-bold.text-dark {
+						color: $white !important;
+					}
+					
+					.fw-medium,
+					.fw-semibold {
+						color: $white !important;
+					}
+				}
 			}
 		}
 
@@ -1391,7 +1507,7 @@ html {
 				border-bottom: 1px solid lighten($header-brand-color, 5);
 
 				.logo-lg {
-					filter: invert(1);
+					// filter: invert(1);
 				}
 			}
 
@@ -1403,16 +1519,16 @@ html {
 				}
 
 				.nxl-link {
-					color: $navigation-color;
+					color: #94a2aa;
 
 					&:active,
 					&:focus,
 					&:hover {
-						color: $navigation-active-color;
+						color: $primary;
 
 						.nxl-micon {
-							i {
-								color: $navigation-active-color;
+							i, svg {
+								color: $primary;
 							}
 						}
 					}
@@ -1425,8 +1541,9 @@ html {
 						&:focus,
 						&:hover {
 							>.nxl-link {
-								background-color: $navigation-hover-color;
+								background-color: rgba(253, 186, 18, 0.125);
 							}
+							
 						}
 					}
 				}
@@ -1437,12 +1554,12 @@ html {
 					&:focus,
 					&:hover {
 						>.nxl-link {
-							color: $navigation-active-color;
-							background-color: $navigation-hover-color;
+							color: $primary;
+							background-color: rgba(253, 186, 18, 0.125);
 
 							.nxl-micon {
-								i {
-									color: $navigation-active-color;
+								i, svg {
+									color: $primary;
 								}
 							}
 						}

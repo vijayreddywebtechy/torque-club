@@ -19,7 +19,7 @@ const ActiveChallenges = () => {
             <div className={`card h-100 ${isExpanded ? "card-expand" : ""} ${refreshKey ? "card-loading" : ""}`}>
                 <div className="card-header">
                     <div className="d-flex align-items-center">
-                        <div className="avatar-text avatar-sm me-2">
+                        <div className="avatar-text avatar-md me-2">
                             <FiTarget />
                         </div>
                         <h5 className="card-title mb-0">Active Challenges</h5>
@@ -64,7 +64,7 @@ const ActiveChallenges = () => {
                                     </div>
                                     <div className="progress mb-2" style={{height: '8px'}}>
                                         <div 
-                                            className="progress-bar bg-dark" 
+                                            className="progress-bar bg-primary" 
                                             style={{width: `${challenge.progress}%`}}
                                         ></div>
                                     </div>

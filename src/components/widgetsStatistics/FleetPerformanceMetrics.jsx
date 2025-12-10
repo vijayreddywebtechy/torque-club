@@ -19,8 +19,8 @@ const FleetPerformanceMetrics = ({ title = "Fleet Performance Metrics" }) => {
             <div className={`card stretch stretch-full ${isExpanded ? "card-expand" : ""} ${refreshKey ? "card-loading" : ""}`}>
                 <div className="card-header">
                     <div className="d-flex align-items-center">
-                        <div className="avatar-text avatar-sm me-2">
-                            <FiBarChart2 />
+                        <div className="avatar-text avatar-md me-2">
+                            <FiBarChart2 size={14} />
                         </div>
                         <h5 className="card-title mb-0">{title}</h5>
                     </div>
@@ -44,7 +44,7 @@ const FleetPerformanceMetrics = ({ title = "Fleet Performance Metrics" }) => {
                         {fleetMetricsData.map((metric) => (
                             <div key={metric.id} className="col-lg-4">
                                 <div className="d-flex align-items-center mb-3">
-                                    <div className={`avatar-text avatar-sm me-3 text-${metric.color}`}>
+                                    <div className={`avatar-text avatar-lg me-3 text-${metric.color}`}>
                                         {getIcon(metric.icon)}
                                     </div>
                                     <div className="flex-grow-1">

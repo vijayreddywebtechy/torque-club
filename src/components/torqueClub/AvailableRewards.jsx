@@ -19,7 +19,7 @@ const AvailableRewards = () => {
             <div className={`card h-100 ${isExpanded ? "card-expand" : ""} ${refreshKey ? "card-loading" : ""}`}>
                 <div className="card-header">
                     <div className="d-flex align-items-center">
-                        <div className="avatar-text avatar-sm me-2">
+                        <div className="avatar-text avatar-md me-2">
                             <FiGift />
                         </div>
                         <h5 className="card-title mb-0">Available Rewards</h5>

@@ -14,8 +14,8 @@ const DocumentsPage = () => {
         <div className="page-header-left d-flex align-items-center">
           <div className="page-header-title">
             <div className="d-flex align-items-center">
-              <div className="avatar-text avatar-md me-3">
-                <FiShield />
+              <div className="avatar-text avatar-lg me-3">
+                <FiShield size={24} />
               </div>
               <div>
                 <h5 className="mb-1">Document Vault</h5>

@@ -51,8 +51,8 @@ const FleetMachineCard = ({ machine }) => {
                     <div className="position-absolute top-0 start-0 p-3 w-100">
                         <div className="d-flex justify-content-between align-items-start">
                             {getStatusBadge(machine.status, machine.alerts, machine.warningCount, machine.alertCount)}
-                            <button className="btn btn-light btn-sm rounded-circle" style={{ width: '40px', height: '40px' }}>
-                                <FiMapPin size={18} />
+                            <button className="btn btn-light btn-sm rounded-circle p-2" style={{ width: '40px', height: '40px' }}>
+                                <FiMapPin size={24} />
                             </button>
                         </div>
                     </div>

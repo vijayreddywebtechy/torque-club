@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,22 +9,48 @@ import Menus from './Menus';
 import { NavigationContext } from '@/contentApi/navigationProvider';
 import getIcon from '@/utils/getIcon';
 
+import bweTorqueLogo from '/public/images/logo/bwe_torque_club_logo.png';
+import bweTorqueLogoWhite from '/public/images/logo/bwe_torque_club_logo_white.png';
+import bweTorqueLogoIcon from '/public/images/logo/bwe_torque_club_icon.png';
+
 const NavigationManu = () => {
     const { navigationOpen, setNavigationOpen } = useContext(NavigationContext)
     const pathName = usePathname()
+    const [theme, setTheme] = useState('dark')
+
     useEffect(() => {
         setNavigationOpen(false)
     }, [pathName])
+
+    useEffect(() => {
+        // Check theme from document class
+        const checkTheme = () => {
+            const hasDarkClass = document.documentElement.classList.contains('app-skin-dark');
+            setTheme(hasDarkClass ? 'dark' : 'light');
+        }
+
+        // Initial check
+        checkTheme();
+
+        // Watch for class changes
+        const observer = new MutationObserver(checkTheme);
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+        return () => observer.disconnect();
+    }, [])
+
+    const logoSrc = theme === 'light' ? bweTorqueLogoWhite : bweTorqueLogo;
+
     return (
         <nav className={`nxl-navigation ${navigationOpen ? "mob-navigation-active" : ""}`}>
             <div className="navbar-wrapper">
                 <div className="m-header">
                     <Link href="/" className="b-brand">
                         {/* <!-- ========   change your logo hear   ============ --> */}
-                        {/* <Image width={140} height={30} src="/images/logo-full.png" alt="logo" className="logo logo-lg" />
-                        <Image width={140} height={30} src="/images/logo-abbr.png" alt="logo" className="logo logo-sm" /> */}
-                        <h3 className='logo-lg'>Torque Club</h3>
-                        <h3 className='logo-sm'>TC</h3>
+                        <Image width={180} height={60} src={logoSrc} alt="logo" className="h-auto logo logo-lg" style={{width: '100%'}} />
+                        <Image width={140} height={42} src={bweTorqueLogoIcon} alt="logo" className="h-auto logo logo-sm" style={{width: '100%'}} />
+                        {/* <h3 className='logo-lg mb-0'>Torque Club</h3>
+                        <h3 className='logo-sm mb-0'>TC</h3> */}
                     </Link>
                 </div>
 

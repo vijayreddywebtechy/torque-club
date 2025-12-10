@@ -18,8 +18,8 @@ const RecentOrders = ({ title = "Recent Orders" }) => {
             <div className={`card stretch stretch-full ${isExpanded ? "card-expand" : ""} ${refreshKey ? "card-loading" : ""}`}>
                 <div className="card-header">
                     <div className="d-flex align-items-center">
-                        <div className="avatar-text avatar-sm me-2">
-                            <FiPackage />
+                        <div className="avatar-text avatar-md me-2">
+                            <FiPackage size={14} />
                         </div>
                         <h5 className="card-title mb-0">{title}</h5>
                     </div>

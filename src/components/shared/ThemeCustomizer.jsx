@@ -33,13 +33,21 @@ const ThemeCustomizer = () => {
         if (type === "dark") {
             document.documentElement.classList.add("app-navigation-dark");
             localStorage.setItem("navigationTheme", "dark");
-            document.getElementById("app-navigation-dark").checked = true;
-            document.getElementById("app-navigation-light").checked = false;
+            if (document.getElementById("app-navigation-dark")) {
+                document.getElementById("app-navigation-dark").checked = true;
+            }
+            if (document.getElementById("app-navigation-light")) {
+                document.getElementById("app-navigation-light").checked = false;
+            }
         } else {
             document.documentElement.classList.remove("app-navigation-dark");
             localStorage.setItem("navigationTheme", "light");
-            document.getElementById("app-navigation-dark").checked = false;
-            document.getElementById("app-navigation-light").checked = true;
+            if (document.getElementById("app-navigation-dark")) {
+                document.getElementById("app-navigation-dark").checked = false;
+            }
+            if (document.getElementById("app-navigation-light")) {
+                document.getElementById("app-navigation-light").checked = true;
+            }
         }
     };
 
@@ -47,13 +55,21 @@ const ThemeCustomizer = () => {
         if (type === "dark") {
             document.documentElement.classList.add("app-header-dark");
             localStorage.setItem("headerTheme", "dark");
-            document.getElementById("app-header-dark").checked = true;
-            document.getElementById("app-header-light").checked = false;
+            if (document.getElementById("app-header-dark")) {
+                document.getElementById("app-header-dark").checked = true;
+            }
+            if (document.getElementById("app-header-light")) {
+                document.getElementById("app-header-light").checked = false;
+            }
         } else {
             document.documentElement.classList.remove("app-header-dark");
             localStorage.setItem("headerTheme", "light");
-            document.getElementById("app-header-dark").checked = false;
-            document.getElementById("app-header-light").checked = true;
+            if (document.getElementById("app-header-dark")) {
+                document.getElementById("app-header-dark").checked = false;
+            }
+            if (document.getElementById("app-header-light")) {
+                document.getElementById("app-header-light").checked = true;
+            }
         }
     };
 
@@ -61,13 +77,27 @@ const ThemeCustomizer = () => {
         if (type === "dark") {
             document.documentElement.classList.add("app-skin-dark");
             localStorage.setItem("skinTheme", "dark");
-            document.getElementById("app-skin-dark").checked = true;
-            document.getElementById("app-skin-light").checked = false;
+            if (document.getElementById("app-skin-dark")) {
+                document.getElementById("app-skin-dark").checked = true;
+            }
+            if (document.getElementById("app-skin-light")) {
+                document.getElementById("app-skin-light").checked = false;
+            }
+            // Also set navigation and header to dark
+            handleNavigationTheme("dark");
+            handleHeaderTheme("dark");
         } else {
             document.documentElement.classList.remove("app-skin-dark");
             localStorage.setItem("skinTheme", "light");
-            document.getElementById("app-skin-dark").checked = false;
-            document.getElementById("app-skin-light").checked = true;
+            if (document.getElementById("app-skin-dark")) {
+                document.getElementById("app-skin-dark").checked = false;
+            }
+            if (document.getElementById("app-skin-light")) {
+                document.getElementById("app-skin-light").checked = true;
+            }
+            // Also set navigation and header to light
+            handleNavigationTheme("light");
+            handleHeaderTheme("light");
         }
     };
 
@@ -82,13 +112,34 @@ const ThemeCustomizer = () => {
     };
 
     const handleResetAll = () => {
-        const x = document.documentElement.classList;
-        document.documentElement.classList.remove(...x);
+        // Remove all theme classes
+        document.documentElement.classList.remove(
+            'app-navigation-dark',
+            'app-header-dark', 
+            'app-skin-dark'
+        );
+        
+        // Remove font family classes
+        const existingFontClass = document.documentElement.classList.value.match(/app-font-family-\w+/);
+        if (existingFontClass) {
+            document.documentElement.classList.remove(existingFontClass[0]);
+        }
+        
+        // Add default font
+        document.documentElement.classList.add('app-font-family-inter');
+        
+        // Set all radio buttons to light/default
         document.getElementById("app-navigation-light").checked = true;
         document.getElementById("app-header-light").checked = true;
         document.getElementById("app-skin-light").checked = true;
-        document.getElementById("app-font-family-inter").checked = true
-        localStorage.clear(); // Clear all localStorage items
+        document.getElementById("app-font-family-inter").checked = true;
+        
+        // Set light theme in localStorage
+        localStorage.setItem("navigationTheme", "light");
+        localStorage.setItem("headerTheme", "light");
+        localStorage.setItem("skinTheme", "light");
+        localStorage.setItem("fontFamily", "app-font-family-inter");
+        
         setOpen(false);
     };
 
@@ -99,15 +150,25 @@ const ThemeCustomizer = () => {
         const savedSkinTheme = localStorage.getItem("skinTheme");
         const savedFontFamily = localStorage.getItem("fontFamily");
 
+        // Set dark mode as default if no theme is saved
         if (savedNavigationTheme) {
             handleNavigationTheme(savedNavigationTheme);
+        } else {
+            handleNavigationTheme("dark");
         }
+        
         if (savedHeaderTheme) {
             handleHeaderTheme(savedHeaderTheme);
+        } else {
+            handleHeaderTheme("dark");
         }
+        
         if (savedSkinTheme) {
             handleSkinTheme(savedSkinTheme);
+        } else {
+            handleSkinTheme("dark");
         }
+        
         if (savedFontFamily) {
             handleFontFamily(savedFontFamily);
         }
@@ -138,11 +199,11 @@ const ThemeCustomizer = () => {
                             <label className="py-1 px-2 fs-8 fw-bold text-uppercase text-muted text-spacing-2 bg-white border border-gray-2 position-absolute rounded-2 options-label" style={{ top: '-12px' }}>Navigation</label>
                             <div className="row g-2 theme-options-items app-navigation" id="appNavigationList">
                                 <div className="col-6 text-center single-option" onClick={() => handleNavigationTheme("light")}>
-                                    <input type="radio" className="btn-check" name="app-navigation" id="app-navigation-light" defaultValue={1} data-app-navigation="app-navigation-light" defaultChecked />
+                                    <input type="radio" className="btn-check" name="app-navigation" id="app-navigation-light" defaultValue={1} data-app-navigation="app-navigation-light" />
                                     <label className="py-2 fs-9 fw-bold text-dark text-uppercase text-spacing-1 border border-gray-2 w-100 h-100 c-pointer position-relative options-label" htmlFor="app-navigation-light">Light</label>
                                 </div>
                                 <div className="col-6 text-center single-option" onClick={() => handleNavigationTheme("dark")}>
-                                    <input type="radio" className="btn-check" name="app-navigation" id="app-navigation-dark" defaultValue={2} data-app-navigation="app-navigation-dark" />
+                                    <input type="radio" className="btn-check" name="app-navigation" id="app-navigation-dark" defaultValue={2} data-app-navigation="app-navigation-dark" defaultChecked />
                                     <label className="py-2 fs-9 fw-bold text-dark text-uppercase text-spacing-1 border border-gray-2 w-100 h-100 c-pointer position-relative options-label" htmlFor="app-navigation-dark">Dark</label>
                                 </div>
                             </div>
@@ -153,11 +214,11 @@ const ThemeCustomizer = () => {
                             <label className="py-1 px-2 fs-8 fw-bold text-uppercase text-muted text-spacing-2 bg-white border border-gray-2 position-absolute rounded-2 options-label" style={{ top: '-12px' }}>Header</label>
                             <div className="row g-2 theme-options-items app-header" id="appHeaderList">
                                 <div className="col-6 text-center single-option" onClick={() => handleHeaderTheme("light")}>
-                                    <input type="radio" className="btn-check" name="app-header" id="app-header-light" defaultValue={1} data-app-header="app-header-light" defaultChecked />
+                                    <input type="radio" className="btn-check" name="app-header" id="app-header-light" defaultValue={1} data-app-header="app-header-light" />
                                     <label className="py-2 fs-9 fw-bold text-dark text-uppercase text-spacing-1 border border-gray-2 w-100 h-100 c-pointer position-relative options-label" htmlFor="app-header-light">Light</label>
                                 </div>
                                 <div className="col-6 text-center single-option" onClick={() => handleHeaderTheme("dark")}>
-                                    <input type="radio" className="btn-check" name="app-header" id="app-header-dark" defaultValue={2} data-app-header="app-header-dark" />
+                                    <input type="radio" className="btn-check" name="app-header" id="app-header-dark" defaultValue={2} data-app-header="app-header-dark" defaultChecked />
                                     <label className="py-2 fs-9 fw-bold text-dark text-uppercase text-spacing-1 border border-gray-2 w-100 h-100 c-pointer position-relative options-label" htmlFor="app-header-dark">Dark</label>
                                 </div>
                             </div>
@@ -168,11 +229,11 @@ const ThemeCustomizer = () => {
                             <label className="py-1 px-2 fs-8 fw-bold text-uppercase text-muted text-spacing-2 bg-white border border-gray-2 position-absolute rounded-2 options-label" style={{ top: '-12px' }}>Skins</label>
                             <div className="row g-2 theme-options-items app-skin" id="appSkinList">
                                 <div className="col-6 text-center position-relative single-option light-button" onClick={() => handleSkinTheme("light")}>
-                                    <input type="radio" className="btn-check" id="app-skin-light" name="app-skin" defaultValue={1} data-app-skin="app-skin-light" defaultChecked />
+                                    <input type="radio" className="btn-check" id="app-skin-light" name="app-skin" defaultValue={1} data-app-skin="app-skin-light" />
                                     <label className="py-2 fs-9 fw-bold text-dark text-uppercase text-spacing-1 border border-gray-2 w-100 h-100 c-pointer position-relative options-label" htmlFor="app-skin-light">Light</label>
                                 </div>
                                 <div className="col-6 text-center position-relative single-option dark-button" onClick={() => handleSkinTheme("dark")}>
-                                    <input type="radio" className="btn-check" id="app-skin-dark" name="app-skin" defaultValue={2} data-app-skin="app-skin-dark" />
+                                    <input type="radio" className="btn-check" id="app-skin-dark" name="app-skin" defaultValue={2} data-app-skin="app-skin-dark" defaultChecked />
                                     <label className="py-2 fs-9 fw-bold text-dark text-uppercase text-spacing-1 border border-gray-2 w-100 h-100 c-pointer position-relative options-label" htmlFor="app-skin-dark">Dark</label>
                                 </div>
                             </div>

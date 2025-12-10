@@ -176,9 +176,9 @@ $navigation-caption: $white;
 $navigation-active-color: $white;
 $navigation-color: #b1b4c0;
 $navigation-icon-color: #b1b4c0;
-$navigation-background: #0f172a;
-$navigation-hover-color: #1c2438;
-$navigation-border-color: #1b2436;
+$navigation-background: #252525;
+$navigation-hover-color: #252525;
+$navigation-border-color: #3a3a3a;
 
 /*
 <--!----------------------------------------------------------------!-->
@@ -186,10 +186,10 @@ $navigation-border-color: #1b2436;
 <--!----------------------------------------------------------------!-->
 */
 $header-color: #2c3344;
-$header-background: #0f172a;
+$header-background: #000005;
 $header-link-color: #6b7280;
-$header-brand-color: #0f172a;
-$header-border-color: #1b2436;
+$header-brand-color: #252525;
+$header-border-color: #3a3a3a;
 
 /*
 <--!----------------------------------------------------------------!-->
@@ -198,8 +198,8 @@ $header-border-color: #1b2436;
 */
 $topbar-height: 60px;
 $topbar-color: #b5bdca;
-$topbar-background: #1b2335;
-$header-submenu-color: #0f172a;
+$topbar-background: #252525;
+$header-submenu-color: #000005;
 $header-submenu-background: $white;
 
 /*
@@ -207,10 +207,10 @@ $header-submenu-background: $white;
 <--! Theme Dark !-->
 <--!----------------------------------------------------------------!-->
 */
-$dark-theme-color: #b1b4c0;
-$dark-theme-color-dark: #121a2d;
-$dark-theme-color-darker: #0f172a;
-$dark-theme-color-hover: #1c2438;
-$dark-theme-color-hover-2: #121b2e;
-$dark-theme-color-border: #1b2436;
+$dark-theme-color: #94a2aa;
+$dark-theme-color-dark: #000005;
+$dark-theme-color-darker: #252525;
+$dark-theme-color-hover: #252525;
+$dark-theme-color-hover-2: #252525;
+$dark-theme-color-border: #3a3a3a;
 $dark-theme-box-shadow: 0 0 20px rgb(0 0 0 / 50%);

@@ -10,7 +10,7 @@ const AccountsOverviewSummary = () => {
         {
             title: "Total Balance",
             value: `R ${summary.totalBalance.toLocaleString()}`,
-            icon: <FiTrendingDown />,
+            icon: <FiTrendingDown size={18} />,
             color: "danger",
             bgColor: "bg-soft-danger",
             textColor: "text-danger"
@@ -18,7 +18,7 @@ const AccountsOverviewSummary = () => {
         {
             title: "Total Credit Limit",
             value: `R ${summary.totalCreditLimit.toLocaleString()}`,
-            icon: <FiCreditCard />,
+            icon: <FiCreditCard size={18} />,
             color: "primary",
             bgColor: "bg-soft-primary",
             textColor: "text-primary"
@@ -26,7 +26,7 @@ const AccountsOverviewSummary = () => {
         {
             title: "Available Credit",
             value: `R ${summary.availableCredit.toLocaleString()}`,
-            icon: <FiCheckCircle />,
+            icon: <FiCheckCircle size={18} />,
             color: "success",
             bgColor: "bg-soft-success",
             textColor: "text-success"
@@ -34,7 +34,7 @@ const AccountsOverviewSummary = () => {
         {
             title: "Overdue Amount",
             value: `R ${summary.overdueAmount.toLocaleString()}`,
-            icon: <FiAlertTriangle />,
+            icon: <FiAlertTriangle size={18} />,
             color: "warning",
             bgColor: "bg-soft-warning",
             textColor: "text-warning"

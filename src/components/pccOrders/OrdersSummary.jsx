@@ -19,28 +19,28 @@ const OrdersSummary = () => {
         {
             title: "Total Orders",
             value: totalOrders,
-            icon: <FiShoppingBag />,
+            icon: <FiShoppingBag size={18} />,
             bgColor: "bg-soft-primary",
             textColor: "text-primary"
         },
         {
             title: "Total Value",
             value: `R${totalValue.toLocaleString()}`,
-            icon: <FiDollarSign />,
+            icon: <FiDollarSign size={18} />,
             bgColor: "bg-soft-success",
             textColor: "text-success"
         },
         {
             title: "Delivered",
             value: deliveredCount,
-            icon: <FiTruck />,
+            icon: <FiTruck size={18} />,
             bgColor: "bg-soft-info",
             textColor: "text-info"
         },
         {
             title: "Processing",
             value: processingCount,
-            icon: <FiClock />,
+            icon: <FiClock size={18} />,
             bgColor: "bg-soft-warning",
             textColor: "text-warning"
         }

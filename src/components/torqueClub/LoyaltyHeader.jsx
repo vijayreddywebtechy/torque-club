@@ -42,7 +42,7 @@ const LoyaltyHeader = () => {
                             {/* Progress Bar */}
                             <div className="progress mb-2" style={{height: '12px'}}>
                                 <div 
-                                    className="progress-bar bg-dark" 
+                                    className="progress-bar bg-primary" 
                                     style={{width: `${member.progressPercentage}%`}}
                                 ></div>
                             </div>

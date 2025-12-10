@@ -299,7 +299,7 @@ const AccountsTabbedView = () => {
                             {/* Monthly Spending Trend Chart */}
                             <div className="col-md-6">
                                 <div className="card border">
-                                    <div className="card-body">
+                                    <div className="card-body d-flex flex-column">
                                         <div className="d-flex align-items-center mb-4">
                                             <div className="avatar-text avatar-sm bg-soft-primary text-primary me-2">
                                                 <i className="feather-bar-chart-2"></i>
@@ -307,38 +307,50 @@ const AccountsTabbedView = () => {
                                             <h6 className="mb-0">Monthly Spending Trend</h6>
                                         </div>
                                         
-                                        <div className="chart-container mb-3" style={{height: '200px', position: 'relative'}}>
-                                            <div className="d-flex align-items-end justify-content-between h-100 px-2">
-                                                <div className="d-flex flex-column align-items-center">
-                                                    <div className="bg-dark mb-2" style={{width: '40px', height: '120px'}}></div>
-                                                    <span className="fs-12 text-muted">Oct</span>
-                                                </div>
-                                                <div className="d-flex flex-column align-items-center">
-                                                    <div className="bg-dark mb-2" style={{width: '40px', height: '140px'}}></div>
-                                                    <span className="fs-12 text-muted">Nov</span>
-                                                </div>
-                                                <div className="d-flex flex-column align-items-center">
-                                                    <div className="bg-dark mb-2" style={{width: '40px', height: '100px'}}></div>
-                                                    <span className="fs-12 text-muted">Dec</span>
-                                                </div>
-                                                <div className="d-flex flex-column align-items-center">
-                                                    <div className="bg-dark mb-2" style={{width: '40px', height: '130px'}}></div>
-                                                    <span className="fs-12 text-muted">Jan</span>
-                                                </div>
-                                                <div className="d-flex flex-column align-items-center">
-                                                    <div className="bg-dark mb-2" style={{width: '40px', height: '150px'}}></div>
-                                                    <span className="fs-12 text-muted">Feb</span>
+                                        <div className="position-relative flex-grow-1" style={{paddingLeft: '50px', minHeight: '280px'}}>
+                                            <div className="mb-3 h-100" style={{position: 'relative'}}>
+                                                <div className="d-flex align-items-end justify-content-around h-100 gap-2" style={{paddingBottom: '25px'}}>
+                                                    <div className="d-flex flex-column align-items-center" style={{flex: '1 1 0', height: '100%'}}>
+                                                        <div style={{flex: '0 0 auto', marginTop: 'auto'}} className="w-100 d-flex flex-column align-items-center">
+                                                            <div className="bg-primary mb-2 rounded" style={{width: '100%', maxWidth: '50px', height: '100px'}}></div>
+                                                            <span className="fs-11 text-muted">Oct</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="d-flex flex-column align-items-center" style={{flex: '1 1 0', height: '100%'}}>
+                                                        <div style={{flex: '0 0 auto', marginTop: 'auto'}} className="w-100 d-flex flex-column align-items-center">
+                                                            <div className="bg-primary mb-2 rounded" style={{width: '100%', maxWidth: '50px', height: '130px'}}></div>
+                                                            <span className="fs-11 text-muted">Nov</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="d-flex flex-column align-items-center" style={{flex: '1 1 0', height: '100%'}}>
+                                                        <div style={{flex: '0 0 auto', marginTop: 'auto'}} className="w-100 d-flex flex-column align-items-center">
+                                                            <div className="bg-primary mb-2 rounded" style={{width: '100%', maxWidth: '50px', height: '80px'}}></div>
+                                                            <span className="fs-11 text-muted">Dec</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="d-flex flex-column align-items-center" style={{flex: '1 1 0', height: '100%'}}>
+                                                        <div style={{flex: '0 0 auto', marginTop: 'auto'}} className="w-100 d-flex flex-column align-items-center">
+                                                            <div className="bg-primary mb-2 rounded" style={{width: '100%', maxWidth: '50px', height: '115px'}}></div>
+                                                            <span className="fs-11 text-muted">Jan</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="d-flex flex-column align-items-center" style={{flex: '1 1 0', height: '100%'}}>
+                                                        <div style={{flex: '0 0 auto', marginTop: 'auto'}} className="w-100 d-flex flex-column align-items-center">
+                                                            <div className="bg-primary mb-2 rounded" style={{width: '100%', maxWidth: '50px', height: '140px'}}></div>
+                                                            <span className="fs-11 text-muted">Feb</span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             
                                             {/* Y-axis labels */}
-                                            <div className="position-absolute" style={{left: '-10px', top: '0', height: '100%'}}>
-                                                <div className="d-flex flex-column justify-content-between h-100 text-muted fs-11">
-                                                    <span>R 100k</span>
-                                                    <span>R 75k</span>
-                                                    <span>R 50k</span>
-                                                    <span>R 25k</span>
-                                                    <span>R 0k</span>
+                                            <div className="position-absolute" style={{left: '0', top: '0', bottom: '30px'}}>
+                                                <div className="d-flex flex-column justify-content-between h-100 text-muted" style={{fontSize: '11px'}}>
+                                                    <span>R100k</span>
+                                                    <span>R75k</span>
+                                                    <span>R50k</span>
+                                                    <span>R25k</span>
+                                                    <span>R0</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -410,8 +422,8 @@ const AccountsTabbedView = () => {
             <div className={`card stretch stretch-full ${isExpanded ? "card-expand" : ""} ${refreshKey ? "card-loading" : ""}`}>
                 <div className="card-header border-bottom">
                     <div className="d-flex align-items-center">
-                        <div className="avatar-text avatar-sm me-2">
-                            <FiCreditCard />
+                        <div className="avatar-text avatar-lg me-2">
+                            <FiCreditCard size={24} />
                         </div>
                         <h5 className="card-title mb-0">Accounts Overview</h5>
                     </div>

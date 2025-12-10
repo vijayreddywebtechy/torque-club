@@ -9,7 +9,7 @@ const FleetLocationMap = ({ machines }) => {
             <div className="card stretch stretch-full">
                 <div className="card-header">
                     <div className="d-flex align-items-center">
-                        <div className="avatar-text avatar-sm me-2">
+                        <div className="avatar-text avatar-md me-2">
                             <FiNavigation />
                         </div>
                         <h5 className="card-title mb-0">Fleet Location Map</h5>

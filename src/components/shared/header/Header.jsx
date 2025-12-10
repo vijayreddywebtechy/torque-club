@@ -17,12 +17,20 @@ const Header = () => {
 
     const handleThemeMode = (type) => {
         if (type === "dark") {
-            document.documentElement.classList.add("app-skin-dark")
+            document.documentElement.classList.add("app-skin-dark");
+            document.documentElement.classList.add("app-navigation-dark");
+            document.documentElement.classList.add("app-header-dark");
             localStorage.setItem("skinTheme", "dark");
+            localStorage.setItem("navigationTheme", "dark");
+            localStorage.setItem("headerTheme", "dark");
         }
         else {
-            document.documentElement.classList.remove("app-skin-dark")
+            document.documentElement.classList.remove("app-skin-dark");
+            document.documentElement.classList.remove("app-navigation-dark");
+            document.documentElement.classList.remove("app-header-dark");
             localStorage.setItem("skinTheme", "light");
+            localStorage.setItem("navigationTheme", "light");
+            localStorage.setItem("headerTheme", "light");
         }
     }
 

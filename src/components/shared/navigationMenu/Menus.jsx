@@ -51,13 +51,16 @@ const Menus = () => {
         <>
             {menuList.map(({ dropdownMenu, id, name, path, icon }) => {
                 const hasDropdown = dropdownMenu && dropdownMenu.length > 0;
-                const menuKey = name.split(' ')[0];
+                const menuKey = name.split(' ')[0].toLowerCase();
+                // Check if current path matches this menu item
+                const isActive = pathName === path || activeParent === menuKey || 
+                                (path !== "/" && pathName.startsWith(path));
                 
                 return (
                     <li
                         key={id}
                         onClick={(e) => handleMainMenu(e, menuKey, hasDropdown)}
-                        className={`nxl-item ${hasDropdown ? 'nxl-hasmenu' : ''} ${activeParent === menuKey ? "active nxl-trigger" : ""}`}
+                        className={`nxl-item ${hasDropdown ? 'nxl-hasmenu' : ''} ${isActive ? "active nxl-trigger" : ""}`}
                     >
                         <Link href={path} className="nxl-link text-capitalize">
                             <span className="nxl-micon"> {getIcon(icon)} </span>
