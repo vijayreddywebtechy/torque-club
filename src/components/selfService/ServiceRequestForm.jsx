@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { FiUpload } from 'react-icons/fi'
+import DateInput from '@/components/shared/DateInput'
 
 const ServiceRequestForm = () => {
     const [formData, setFormData] = useState({
@@ -85,12 +86,11 @@ const ServiceRequestForm = () => {
                         {/* Preferred Date */}
                         <div className="col-md-6">
                             <label className="form-label">Preferred Date <span className="text-danger">*</span></label>
-                            <input
-                                type="date"
-                                className="form-control"
+                            <DateInput
                                 name="date"
                                 value={formData.date}
                                 onChange={handleChange}
+                                placeholder="Select date"
                                 required
                             />
                         </div>

@@ -8,13 +8,11 @@ const FleetSearchFilter = ({ totalMachines, viewMode, setViewMode }) => {
             <div className="card-body">
                 <div className="row g-3 align-items-center">
                     <div className="col-lg-4">
-                        <div className="input-group">
-                            <span className="input-group-text bg-white border-end-0">
-                                <FiSearch size={16} className="text-muted" />
-                            </span>
+                        <div className="position-relative">
+                            <FiSearch className="position-absolute top-50 translate-middle-y ms-3 text-muted" size={16} />
                             <input
                                 type="text"
-                                className="form-control border-start-0 ps-0"
+                                className="form-control ps-5"
                                 placeholder="Search machines, serial numbers, locations..."
                             />
                         </div>

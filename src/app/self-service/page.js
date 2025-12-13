@@ -46,20 +46,22 @@ const SelfServicePage = () => {
                         </div>
 
                         {/* Tab Navigation */}
-                        <ul className="nav nav-tabs mb-4" role="tablist">
+                        <div className="d-flex flex-wrap mb-4 border p-2 gap-2">
                             {tabs.map((tab) => (
-                                <li className="nav-item" key={tab.id}>
+                                <div className="flex-grow-1 flex-sm-grow-0" key={tab.id} style={{ minWidth: '120px' }}>
                                     <button
-                                        className={`nav-link ${activeTab === tab.id ? 'active' : ''}`}
+                                        className={`btn btn-md w-100 text-black border ${activeTab === tab.id ? 'bg-primary border-primary' : 'text-black'}`}
                                         onClick={() => setActiveTab(tab.id)}
                                         type="button"
                                     >
-                                        <span className="me-2">{tab.icon}</span>
-                                        {tab.label}
+                                        <span className="me-2 d-none d-sm-inline">{tab.icon}</span>
+                                        <span className="d-inline d-sm-none">{tab.icon}</span>
+                                        <span className="d-none d-sm-inline">{tab.label}</span>
+                                        <span className="d-inline d-sm-none fs-12">{tab.label}</span>
                                     </button>
-                                </li>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
 
                         {/* Tab Content */}
                         <div className="tab-content">

@@ -244,6 +244,26 @@ html {
 					background-color: $dark-theme-color-hover !important;
 				}
 			}
+			
+			background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>") !important;
+		}
+		
+		input[type="date"],
+		input[type="time"],
+		input[type="datetime-local"],
+		input[type="month"],
+		input[type="week"] {
+			color-scheme: dark;
+			
+			&::-webkit-calendar-picker-indicator {
+				filter: invert(1);
+				opacity: 1;
+			}
+			
+			&:hover::-webkit-calendar-picker-indicator {
+				opacity: 1;
+				filter: invert(1);
+			}
 		}
 		
 		select {

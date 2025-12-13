@@ -8,6 +8,17 @@ const LoginForm = ({ registerPath, resetPath }) => {
     const router = useRouter()
     return (
         <>
+            <div className="mb-4">
+                <img 
+                    src="/images/logo/bwe_torque_club_icon.png" 
+                    alt="Barloworld Torque Club" 
+                    style={{
+                        height: '60px',
+                        width: 'auto',
+                        objectFit: 'contain'
+                    }}
+                />
+            </div>
             <h2 className="fs-20 fw-bolder mb-2">Barloworld Torque Club</h2>
             <h4 className="fs-13 fw-bold mb-2">Sign in to your account</h4>
             <form onSubmit={(e) => { e.preventDefault(); router.push('/'); }} className="w-100 mt-4 pt-2">

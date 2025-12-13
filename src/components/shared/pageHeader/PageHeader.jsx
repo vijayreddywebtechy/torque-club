@@ -4,23 +4,37 @@ import { FiAlignRight, FiArrowLeft } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
-const PageHeader = ({ children }) => {
+const PageHeader = ({ children, title, description, icon }) => {
     const [openSidebar, setOpenSidebar] = useState(false)
     const pathName = usePathname()
-    let folderName = ""
+    let folderName = title || ""
     let fileName = ""
-    if (pathName === "/") {
-        folderName = "Dashboard"
-        fileName = "Dashboard"
-    } else {
-        folderName = pathName.split("/")[1]
-        fileName = pathName.split("/")[2]
+    if (!title) {
+        if (pathName === "/") {
+            folderName = "Dashboard"
+            fileName = "Dashboard"
+        } else {
+            folderName = pathName.split("/")[1]
+            fileName = pathName.split("/")[2]
+        }
     }
     return (
         <div className="page-header">
             <div className="page-header-left d-flex align-items-center">
                 <div className="page-header-title">
-                    <h5 className="m-b-10 text-capitalize">{folderName}</h5>
+                    {icon ? (
+                        <div className="d-flex align-items-center py-2">
+                            <div className="avatar-text avatar-lg me-3">
+                                {icon}
+                            </div>
+                            <div>
+                                <h5 className="mb-1 text-capitalize">{folderName}</h5>
+                                {description && <p className="fs-13 text-muted mb-0">{description}</p>}
+                            </div>
+                        </div>
+                    ) : (
+                        <h5 className="m-b-10 text-capitalize">{folderName}</h5>
+                    )}
                 </div>
                 {/* <ul className="breadcrumb">
                     <li className="breadcrumb-item"><Link href="/">Home</Link></li>

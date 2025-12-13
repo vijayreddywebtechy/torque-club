@@ -26,7 +26,7 @@ const QuickActionsGrid = () => {
                     <div key={action.id} className="col-md-6">
                         <div className="card border h-100 cursor-pointer hover-shadow transition-all">
                             <div className="card-body d-flex align-items-start">
-                                <div className="avatar-text avatar-md bg-soft-primary text-primary me-3">
+                                <div className="avatar-text avatar-lg bg-soft-primary text-primary me-3">
                                     {getIcon(action.icon)}
                                 </div>
                                 <div>

@@ -14,7 +14,7 @@ const PccOrdersPage = () => {
       <div className="page-header">
         <div className="page-header-left d-flex align-items-center">
           <div className="page-header-title">
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center py-2">
               <div className="avatar-text avatar-lg me-3">
                 <FiShoppingBag size={24} />
               </div>

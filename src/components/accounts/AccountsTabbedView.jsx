@@ -443,12 +443,12 @@ const AccountsTabbedView = () => {
                 </div>
 
                 {/* Tab Navigation */}
-                <div className="card-header p-0">
-                    <ul className="nav nav-tabs nav-fill" role="tablist">
+                <div className="card-header py-2">
+                    <div className="d-flex flex-wrap my-2 gap-2">
                         {tabs.map((tab) => (
-                            <li key={tab.id} className="nav-item" role="presentation">
+                            <div key={tab.id} className="flex-grow-1 flex-sm-grow-0" style={{ minWidth: '120px' }}>
                                 <button
-                                    className={`nav-link border-0 ${activeTab === tab.id ? 'active' : ''}`}
+                                    className={`btn btn-md w-100 text-black border ${activeTab === tab.id ? 'bg-primary border-primary' : 'text-black'}`}
                                     onClick={() => setActiveTab(tab.id)}
                                     type="button"
                                     role="tab"
@@ -458,9 +458,9 @@ const AccountsTabbedView = () => {
                                         <span className="ms-2">{tab.label}</span>
                                     </div>
                                 </button>
-                            </li>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 </div>
                 
                 {/* Tab Content */}

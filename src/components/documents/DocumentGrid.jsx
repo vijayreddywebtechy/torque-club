@@ -79,7 +79,7 @@ const DocumentGrid = () => {
 
                             {/* Action Buttons */}
                             <div className="d-flex gap-2">
-                                <button className="btn btn-light btn-sm flex-fill d-flex align-items-center justify-content-center">
+                                <button className="btn btn-light btn-lg flex-fill d-flex align-items-center justify-content-center">
                                     <FiEye size={14} className="me-1" />
                                     Preview
                                 </button>

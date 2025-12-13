@@ -65,7 +65,7 @@ const ActiveAlerts = ({ title = "Active Alerts" }) => {
                 </div>
 
                 <div className="card-footer">
-                    <a href="#" className="btn btn-light btn-sm w-100 d-flex align-items-center justify-content-center text-warning">
+                    <a href="#" className="btn btn-light btn-lg w-100 d-flex align-items-center justify-content-center">
                         Manage Alerts
                         <i className="feather-arrow-right ms-1"></i>
                     </a>

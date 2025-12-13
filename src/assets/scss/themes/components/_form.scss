@@ -63,6 +63,24 @@ input,
 input[type="search"]::-webkit-search-cancel-button {
 	display: none;
 }
+
+/*
+<--!----------------------------------------------------------------!-->
+<--! Date Input Calendar Icon !-->
+<--!----------------------------------------------------------------!-->
+*/
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"] {
+	position: relative;
+	
+	&::-webkit-calendar-picker-indicator {
+		display: none !important;
+	}
+}
+
 /*
 <--!----------------------------------------------------------------!-->
 <--! Custom Checkbox !-->
