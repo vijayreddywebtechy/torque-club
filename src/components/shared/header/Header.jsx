@@ -58,7 +58,8 @@ const Header = () => {
         handleResize();
 
         const savedSkinTheme = localStorage.getItem("skinTheme");
-        handleThemeMode(savedSkinTheme)
+        // Default to light if no preference is saved
+        handleThemeMode(savedSkinTheme || "light")
 
         return () => {
             window.removeEventListener('resize', handleResize);

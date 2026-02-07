@@ -19,7 +19,7 @@ export const themeInitScript = `
     HEADER: 'app-header-dark'
   };
   
-  const DEFAULT_THEME = 'dark';
+  const DEFAULT_THEME = 'light';
   
   function getThemePreference(key) {
     try {
@@ -40,10 +40,10 @@ export const themeInitScript = `
   function applyTheme(preference, className, configKey) {
     const savedTheme = getThemePreference(configKey);
     
-    if (savedTheme === 'light') {
-      document.documentElement.classList.remove(className);
-    } else {
+    if (savedTheme === 'dark') {
       document.documentElement.classList.add(className);
+    } else {
+      document.documentElement.classList.remove(className);
       
       // Set default if no preference exists
       if (!savedTheme) {
