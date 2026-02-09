@@ -9,8 +9,8 @@ import Menus from './Menus';
 import { NavigationContext } from '@/contentApi/navigationProvider';
 import getIcon from '@/utils/getIcon';
 
-import bweTorqueLogo from '/public/images/logo/bwe_torque_club_logo.png';
-import bweTorqueLogoWhite from '/public/images/logo/bwe_torque_club_logo_white.png';
+import bweTorqueLogoWhite from '/public/images/logo/BWEInternal-dark.png';
+import bweTorqueLogo from '/public/images/logo/BWEInternal-w.png';
 import bweTorqueLogoIcon from '/public/images/logo/bwe_torque_club_icon.png';
 
 const NavigationManu = () => {
